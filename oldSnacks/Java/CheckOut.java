@@ -1,5 +1,5 @@
 import java.util.Scanner;
-	public class CheckOutCart{
+	public class CheckOut{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 
@@ -33,10 +33,10 @@ while (true){
 	    }
 	}	
 	
-	System.out.print("How much did the customer gave you?:");
+	System.out.println("How much did the customer gave you?:");
 	int amountcolected = input.nextInt();
 
-	System.out.print("Enter discount percentage (e.g., 10 for 10%): ");
+	System.out.println("Enter discount percentage (e.g., 10 for 10%): ");
         double discountpercentage = input.nextDouble();
 	discountpercentage = discountpercentage / 100;
         double discount = total * discountpercentage;
@@ -51,8 +51,8 @@ System.out.println("SEMICOLON STORES");
 	System.out.println("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.");
 	System.out.println("TEL: 03293828343");
 	System.out.println("DATE : 18-AUGUST-24  8:48:11pms");
-	System.out.printf("Cashier's name %d", cashierName);
-	System.out.printf("Customer Name: %d",  customerName);
+	System.out.printf("Cashier's name" + cashierName);
+	System.out.printf("Customer Name:" + customerName);
 	System.out.println("\n=========================================================\n");
 	System.out.printf("%22s%10s%10s%15s", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
 	System.out.print("\n---------------------------------------------------------\n");
