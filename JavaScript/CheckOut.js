@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')();
 
-	const customerName = prompt("What is the customer's name: ");
+	const customerName = prompt("What is the customer's name? ");
 	
 	const cashierName = prompt("Enter cashier's name: ")
 
@@ -9,23 +9,23 @@ const prompt = require('prompt-sync')();
 	let vat = 0.075;
 
 while (true){
-	const userPurchased = prompt("What did the user buy?:");
+	const userPurchased = prompt("What did the user buy? ");
 
-	const numberOfPieces = prompt("How many pieces:");
+	const numberOfPieces = prompt("How many pieces: ");
 
-	const unitPrice = prompt("How much per unit?:");
+	const unitPrice = prompt("How much per unit?: ");
 	
-	total = numberOfPieces * UnitPrice;
+	total = numberOfPieces * unitPrice;
 
 	const customerResponse = prompt("Add more items? (yes/no): ");
-            if (customerResponse== no) {
+            if (customerResponse == "no") {
                 break;
 	    }
 	}	
 	
-	const amountcolected = input("How much did the customer gave you?:");
+	const amountcolected = prompt("How much did the customer gave you?: ");
 
-	const discountpercentage = input("Enter discount percentage (e.g., 10 for 10%): ");
+	const discountpercentage = prompt("Enter discount percentage (e.g., 10 for 10%): ");
 	discountpercentage = discountpercentage / 100;
         let discount = total * discountpercentage;
        	vat = total * vat;
@@ -38,26 +38,26 @@ while (true){
 	console.log("MAIN BRANCH");
 	console.log("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.");
 	console.log("TEL: 03293828343");
-	/*System.out.println("DATE : 18-AUGUST-24  8:48:11pms");
-	System.out.println("Cashier's name" + cashierName);
-	System.out.println("Customer Name:" + customerName);
-	System.out.println("\n=========================================================\n");
-	System.out.printf("%22s%10s%10s%15s", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
-	System.out.print("\n---------------------------------------------------------\n");
+	console.log("DATE : 18-AUGUST-24  8:48:11pms");
+	console.log("Cashier's name" + cashierName);
+	console.log("Customer Name:" + customerName);
+	console.log("\n========================================================= ");
+	//console.log("%22s%10s%10s%15s", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
+	console.log("\n--------------------------------------------------------- ");
 
-System.out.println("---------------------------------------------------------");
-        System.out.printf("Subtotal: %38.2f NGN%n", total);
-        System.out.printf("Discount: %37.2f NGN%n", discount);
-        System.out.printf("VAT (7.5%%): %36.2f NGN%n", vat);
-        System.out.printf("Total Payable: %30.2f NGN%n", totalSum);
+	console.log("---------------------------------------------------------");
+	console.log(`Subtotal: ${total.toFixed(2)} NGN`);
+	console.log(`Discount: ${discount.toFixed(2)} NGN`);
+	console.log(`VAT (7.5%): ${vat.toFixed(2)} NGN`);
+	console.log(`Total Payable:${totalSum.toFixed(2)} NGN`);
 	
-System.out.println("=========================================================");
-System.out.printf("Bill total: %38.2f NGN%n",totalAnount);
-System.out.printf("Amount paid: %30.2f NGN%n", totalSum);
-System.out.printf("Balance: %36.2f NGN%n",balanceRecieved);
+console.log("=========================================================");
+console.log(`Total Amount:${totalAmount.toFixed(2)} NGN`);
+console.log(`Amount paid:${totalSum.toFixed(2)} NGN`);
+console.log(`Balance:${balanceRecieved.toFixed(2)} NGN`);
 
-System.out.println("==========================================================");
+console.log("==========================================================");
 
-System.out.println("THANK YOU FOR YOUR PATRONAGE!");
+console.log("THANK YOU FOR YOUR PATRONAGE!");
 
-System.out.println("===========================================================");*/
+console.log("===========================================================");
