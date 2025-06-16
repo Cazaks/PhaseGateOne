@@ -5,9 +5,11 @@ class ATM_MachineAPP:
 		self.balance = balance
 		self.name = ""
 
-	def create_account(self, name):
-		self.name = name
-		print(f"Welcome {self.name}! Your created successfully")
+	def create_account(self, first_name, last_name, pin):
+		self.name = first+name
+		self.last_name = last_name
+		self.pin = pin
+		print(f"Welcome {self.first_name}{self.last_name}! Your created successfully")
 	
 	def make_a_deposit(self, deposit_amount):
 		if deposit_amount > 0:
@@ -36,6 +38,12 @@ class ATM_MachineAPP:
 		else:
 			print("you cannot transfer a negative value")
 
+	def check_balance(self):
+		print(f" Your bank balance is: {slfe.balance}")
+
+	def account_close(self):
+		
+
 def main():
 	account = ATM_MachineAPP("Caleb", 20000)
 	while True:
@@ -45,13 +53,18 @@ def main():
 		print("2. Make a deposit")
 		print("3. Make withdrwal")
 		print("4. Make tranfer")
+		print("5. Check bank balance")
 		print("0. To exit")
 
 		userchoice = input("\nChoice an option: ")
 		if userchoice == "1":
-			name = input("Enter your fir and last name\n")
-			account.create_account(name)
-		
+			firstname = input("Enter your fir and last name\n")
+			account.create_account(firstname)
+			lastname = input("Enter your last name\n")
+			account.create_account(lastname)
+			pin = input("Enter your pin\n")
+			account.create_account(pin)
+			
 		elif userchoice == "2":
 			amount = float(input("Enter the amount you want to deposite\n "))
 			account.make_a_deposit(amount)
@@ -63,6 +76,10 @@ def main():
 		elif userchoice == "4":
 			transfer = input("Enter the amount you want to transfer\n ")
 			account.make_withdrwal(transfer)
+
+		elif userchoice == "5":
+			account.check-balance()
+
 
 		elif userchoice == "0":
 			print("Goodbye! Thanks for using our services.")
