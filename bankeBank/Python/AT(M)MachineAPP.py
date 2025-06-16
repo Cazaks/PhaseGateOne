@@ -1,15 +1,13 @@
 class ATM_MachineAPP:
-	def __init__(self, name, balance=0):
-		#self.phone_number = phone_number
-		#self.account_holder = account_holder
+	def __init__(self, name, pin, balance=0):
 		self.balance = balance
+		self.pin = pin
 		self.name = ""
 
 	def create_account(self, first_name, last_name, pin):
-		self.name = first+name
-		self.last_name = last_name
+		self.name = first_name + " " + last_name
 		self.pin = pin
-		print(f"Welcome {self.first_name}{self.last_name}! Your created successfully")
+		print(f"Welcome {self.name}! Your created was successfully")
 	
 	def make_a_deposit(self, deposit_amount):
 		if deposit_amount > 0:
@@ -41,11 +39,15 @@ class ATM_MachineAPP:
 	def check_balance(self):
 		print(f" Your bank balance is: {slfe.balance}")
 
-	def account_close(self):
-		
+	def change_pin(self, old_pin, new_pin, ):
+		if self.pin == old_pin:
+			self.pin == new_pin
+			print("Pin is changed successfully")
+		else:
+			print("Incorrect pin")
 
 def main():
-	account = ATM_MachineAPP("Caleb", 20000)
+	account = ATM_MachineAPP("Caleb", 20000, 1443)
 	while True:
 		print("We offer the following services")
 		print("Press;")
@@ -54,16 +56,15 @@ def main():
 		print("3. Make withdrwal")
 		print("4. Make tranfer")
 		print("5. Check bank balance")
+		print("6. Change pin")
 		print("0. To exit")
 
 		userchoice = input("\nChoice an option: ")
 		if userchoice == "1":
-			firstname = input("Enter your fir and last name\n")
-			account.create_account(firstname)
+			firstname = input("Enter your first name\n")
 			lastname = input("Enter your last name\n")
-			account.create_account(lastname)
 			pin = input("Enter your pin\n")
-			account.create_account(pin)
+			account.create_account(firstname, lastname, pin)
 			
 		elif userchoice == "2":
 			amount = float(input("Enter the amount you want to deposite\n "))
@@ -80,6 +81,10 @@ def main():
 		elif userchoice == "5":
 			account.check-balance()
 
+		elif userchoice == "6":
+			pinchange1 = input("Enter your old pin")
+			pinchange2 = input("Enter your new pin")
+			account.change_pin(pinchange1, pinchange2)
 
 		elif userchoice == "0":
 			print("Goodbye! Thanks for using our services.")
