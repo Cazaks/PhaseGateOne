@@ -1,37 +1,68 @@
-public class CardValidation {
-public static String CardNumber(int[] numbers) {
+function AtmCard(){
 
-		int count = 0;
-		int[] cardNumbers = new int[numbers.length];
-		boolean valid = true;
-		String issuer = "";
-	for(int num = 0; num < numbers.length; num++) {
-			cardNumbers[num] = numbers[num];
-				count++;
-			}
-			if(cardNumbers[0] == 4 && count == 16) {
-			issuer = "Visa card";
-			valid = true;
-			}	
-			else if(cardNumbers[0] == 5 && count == 16) {
-			issuer = "Master card";
-			valid = true;
-			}	
-			else if(cardNumbers[0] == 6 && count == 16) {
-			issuer = "Discover";
-			valid = true;
-			}
-			else if(cardNumbers[0] == 3 && count == 15) {
-			issuer = "American Express";
-			valid = true;
-			}
+	let cardNumber = new array();
+	let cardlength = cardNumber.legth;
+	let visaCard = {};
+	let masterCard = {};
+	let discoverCard = {};
+	let americaExpressCard = {};
+	let valid = {};
+	let invalid = {};
+	let issuer = {};
 
-			else{
-				issuer = "Invalid length";
-				}
-					
-				return issuer;
+for(let cardCount = 0; cardCount < cardNumber.legth; cardCount++){
+	if(cardNumber[cardCount] == NaN){
+	console.log("This not applicable")
+	}
+}
+	if(cardlength == 16 && cardnumber(0) == 5){
+		masterCard.valid = true;
+	return valid; 
+	}
+	else
+	if(cardlength != 16 && cardnumber(0) != 5){
+masterCard.valid = true;
+masterCard.issuer = masterCard;
+return invalid; 
+}
 
-		}
-			
+if(cardlength == 16 && cardnumber(0) == 4){
+visaCard.valid = true;
+visaCard.issuer = visaCard;
+return valid; 
+}
+else
+if(cardlength != 16 && cardnumber(0) != 4){
+visaCard.valid = true;
+visaCard.issuer = visaCard;
+return invalid; 
+}
+
+if(cardlength == 16 && cardnumber(0) == 6){
+discoverCard.valid = true;
+discoverCard.issuer = discoverCard;
+return valid; 
+}
+
+else
+if(cardlength != 16 && cardnumber(0) != 6){
+discoverCard.valid = true;
+discoverCard.issuer = discoverCard;
+return invalid; 
+}
+
+if(cardlength == 16 && cardnumber(0) == 3){
+americaExpressCard.valid = true;
+americaExpressCard.issuer = americaExpressCard;
+return valid; 
+}
+
+else
+if(cardlength != 16 && cardnumber(0) != 6){
+americaExpressCard.valid = true;
+americaExpressCard.issuer = americaExpressCard;
+return invalid; 
+}
+
+
 }

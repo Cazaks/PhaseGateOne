@@ -23,9 +23,9 @@ while (true){
 	    }
 	}	
 	
-	const amountcolected = prompt("How much did the customer gave you?: ");
+	const amountcolected = parseFloat(prompt("How much did the customer gave you?: "));
 
-	const discountpercentage = prompt("Enter discount percentage (e.g., 10 for 10%): ");
+	let discountpercentage = prompt("Enter discount percentage (e.g., 10 for 10%): ");
 	discountpercentage = discountpercentage / 100;
         let discount = total * discountpercentage;
        	vat = total * vat;
@@ -42,7 +42,7 @@ while (true){
 	console.log("Cashier's name" + cashierName);
 	console.log("Customer Name:" + customerName);
 	console.log("\n========================================================= ");
-	//console.log("%22s%10s%10s%15s", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
+	console.log("ITEM\t\tQTY\tPRICE\tTOTAL(NGN)");
 	console.log("\n--------------------------------------------------------- ");
 
 	console.log("---------------------------------------------------------");
@@ -53,7 +53,7 @@ while (true){
 	
 console.log("=========================================================");
 console.log(`Total Amount:${totalAmount.toFixed(2)} NGN`);
-console.log(`Amount paid:${totalSum.toFixed(2)} NGN`);
+console.log(`Amount paid:${amountcolected.toFixed(2)} NGN`);
 console.log(`Balance:${balanceRecieved.toFixed(2)} NGN`);
 
 console.log("==========================================================");
