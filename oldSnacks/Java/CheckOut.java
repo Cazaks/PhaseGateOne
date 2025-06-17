@@ -23,7 +23,7 @@ while (true){
 	System.out.println("How much per unit?:");
 	double unitPrice = input.nextDouble();
 	
-	total = numberOfPieces * UnitPrice;
+	total = numberOfPieces * unitPrice;
 
 	System.out.print("Add more items? (yes/no): ");
         input.nextLine(); 
@@ -64,7 +64,7 @@ System.out.println("---------------------------------------------------------");
         System.out.printf("Total Payable: %30.2f NGN%n", totalSum);
 	
 System.out.println("=========================================================");
-System.out.printf("Total amount: %38.2f NGN%n",totalAnount);
+System.out.printf("Total amount: %38.2f NGN%n",totalAmount);
 System.out.printf("Amount paid: %30.2f NGN%n", amountcolected);
 System.out.printf("Balance: %36.2f NGN%n", balanceRecieved);
 
