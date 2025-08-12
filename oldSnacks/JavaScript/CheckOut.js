@@ -4,16 +4,19 @@ const prompt = require('prompt-sync')();
 	
 	const cashierName = prompt("Enter cashier's name: ")
 
+	let userPurchased = 0;
+	let numberOfPieces = 0;
+	let unitPrice = 0;
 
 	let total = 0; 
 	let vat = 0.075;
 
 while (true){
-	const userPurchased = prompt("What did the user buy? ");
+	userPurchased = prompt("What did the user buy? ");
 
-	const numberOfPieces = prompt("How many pieces: ");
+	numberOfPieces = prompt("How many pieces: ");
 
-	const unitPrice = prompt("How much per unit?: ");
+	unitPrice = prompt("How much per unit?: ");
 	
 	total = numberOfPieces * unitPrice;
 
@@ -43,6 +46,9 @@ while (true){
 	console.log("Customer Name:" + customerName);
 	console.log("\n========================================================= ");
 	console.log("ITEM\t\tQTY\tPRICE\tTOTAL(NGN)");
+	console.log(userPurchased);
+	console.log(numberOfPieces);
+	console.log(unitPrice);
 	console.log("\n--------------------------------------------------------- ");
 
 	console.log("---------------------------------------------------------");

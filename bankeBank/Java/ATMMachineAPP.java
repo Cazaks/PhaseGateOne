@@ -1,135 +1,141 @@
 import java.util.Scanner;
 
 public class ATMMachineAPP {
-    private String name;
-    private String pin;
-    private double balance;
 
-    public ATMMachineAPP(String name, double balance, String pin) {
-        this.name = "";
-        this.balance = balance;
-        this.pin = pin;
+    static String name = "";
+    static String pin = "";
+    static double balance = 0.0;
+
+    public static void createAccount(String firstName, String lastName, String newPin) {
+        name = firstName + " " + lastName;
+        pin = newPin;
+        balance = 0.0;
+        System.out.println("Welcome " + name + "! Your account was created successfully.");
+        System.out.println("Your PIN is: " + pin);
+        System.out.println("Your starting balance is: " + balance);
     }
 
-    public void createAccount(String firstName, String lastName, String pin) {
-        this.name = firstName + " " + lastName;
-        this.pin = pin;
-        System.out.println("Welcome " + this.name + "! Your account was created successfully");
-    }
-
-    public void makeDeposit(double depositAmount) {
+    public static void makeDeposit(double depositAmount) {
         if (depositAmount > 0) {
-            this.balance = this.balance + depositAmount;
-            System.out.println("The amount deposited is " + depositAmount + " and your balance is " + this.balance);
-        } 
-	else {
-            System.out.println("You cannot deposit a negative or 0 amount");
+            balance = balance + depositAmount;
+            System.out.println("Amount deposited: " + depositAmount);
+            System.out.println("Your balance is now: " + balance);
+        } else {
+            System.out.println("You cannot deposit a negative or zero amount");
         }
     }
 
-    public void makeWithdrawal(double withdrawalAmount) {
+    public static void makeWithdrawal(double withdrawalAmount) {
         if (withdrawalAmount <= 0) {
-            System.out.println("You cannot withdraw a negative value");
-        } else if (withdrawalAmount > this.balance) {
-            System.out.println("Insufficient funds. Your balance is " + this.balance);
-        } 
-	else {
-            this.balance = this.balance - withdrawalAmount;
-            System.out.println("The amount withdrawn is " + withdrawalAmount + " and your balance is " + this.balance);
+            System.out.println("You cannot withdraw a negative or zero amount");
+        } else if (withdrawalAmount > balance) {
+            System.out.println("Insufficient funds. Your balance is " + balance);
+        } else {
+            balance = balance - withdrawalAmount;
+            System.out.println("Amount withdrawn: " + withdrawalAmount);
+            System.out.println("Your balance is now: " + balance);
         }
     }
 
-    public void makeTransfer(double transferAmount) {
+    public static void makeTransfer(double transferAmount) {
         if (transferAmount <= 0) {
-            System.out.println("You cannot transfer a negative value");
-        } else if (transferAmount > this.balance) {
-            System.out.println("Insufficient funds. Your balance is " + this.balance);
-        } 
-	else {
-            this.balance = this.balance - transferAmount;
-            System.out.println("The amount transferred is " + transferAmount + " and your balance is " + this.balance);
+            System.out.println("You cannot transfer a negative or zero amount");
+        } else if (transferAmount > balance) {
+            System.out.println("Insufficient funds. Your balance is " + balance);
+        } else {
+            balance = balance - transferAmount;
+            System.out.println("Amount transferred: " + transferAmount);
+            System.out.println("Your balance is now: " + balance);
         }
     }
 
-    public void checkBalance() {
-        System.out.println("Your bank balance is: " + this.balance);
+    public static void checkBalance() {
+        System.out.println("Your bank balance is: " + balance);
     }
 
-    public void changePin(String oldPin, String newPin) {
-        if (this.pin.equals(oldPin)) {
-            this.pin = newPin;
+    public static void changePin(String oldPin, String newPin) {
+        if (pin.equals(oldPin)) {
+            pin = newPin;
             System.out.println("Pin changed successfully");
-        } 
-	else {
+        } else {
             System.out.println("Incorrect pin");
         }
     }
 
     public static void main(String[] args) {
-        Scanner caleb = new Scanner(System.in);
-        ATMMachineAPP account = new ATMMachineAPP("Caleb", 20000, "1443");
+        Scanner scan = new Scanner(System.in);
 
         while (true) {
-	    System.out.println("\nWelcome to Cazak Global Financial Institude; aka 'money na water' (CGFI)");
+            System.out.println("Welcome to Cazak Global Financial Institude; aka 'money na water' (CGFI)");
 
-            System.out.println("\nWe offer the following services");
-            System.out.println("Press;");
+            System.out.println("We offer the following services");
             System.out.println("1. Create account");
             System.out.println("2. Make a deposit");
             System.out.println("3. Make withdrawal");
             System.out.println("4. Make transfer");
             System.out.println("5. Check bank balance");
             System.out.println("6. Change pin");
-	    System.out.println("7. Closs account");
             System.out.println("0. To exit");
 
-            System.out.print("\nChoose an option: ");
-            String userChoice = caleb.nextLine();
+	System.out.println("<=======================================================>");
+
+            System.out.println("Choose an option: ");
+            String userChoice = scan.nextLine();
 
             switch (userChoice) {
                 case "1":
                     System.out.println("Enter your first name: ");
-                    String firstname = caleb.nextLine();
+                    String firstname = scan.nextLine();
+
                     System.out.println("Enter your last name: ");
-                    String lastname = caleb.nextLine();
+                    String lastname = scan.nextLine();
+
                     System.out.println("Enter your pin: ");
-                    String pin = caleb.nextLine();
-                    account.createAccount(firstname, lastname, pin);
+                    String newPin = scan.nextLine();
+
+                    createAccount(firstname, lastname, newPin);
+	System.out.println("<=======================================================>");
                     break;
+	
 
                 case "2":
                     System.out.println("Enter the amount you want to deposit: ");
-                    double deposit = caleb.nextDouble();
-                    account.makeDeposit(deposit);
+                    double deposit = scan.nextDouble();
+                    makeDeposit(deposit);
+	System.out.println("<=======================================================>");
                     break;
+
                 case "3":
-
                     System.out.println("Enter the amount you want to withdraw: ");
-                    double withdrawal = caleb.nextDouble();
-                    account.makeWithdrawal(withdrawal);
+                    double withdrawal = scan.nextDouble();
+                    makeWithdrawal(withdrawal);
+	System.out.println("<=======================================================>");
                     break;
+
                 case "4":
-
                     System.out.println("Enter the amount you want to transfer: ");
-                    double transfer = caleb.nextDouble();
-                    account.makeTransfer(transfer);
+                    double transfer = scan.nextDouble();
+                    makeTransfer(transfer);
+	System.out.println("<=======================================================>");
                     break;
-
+	
                 case "5":
-                    account.checkBalance();
+                    checkBalance();
+	System.out.println("<=======================================================>");
                     break;
 
                 case "6":
                     System.out.println("Enter your old pin: ");
-                    String oldPin = caleb.nextLine();
-                    System.out.print("Enter your new pin: ");
-                    String newPin = caleb.nextLine();
-                    account.changePin(oldPin, newPin);
+                    String oldPin = scan.nextLine();
+                    System.out.println("Enter your new pin: ");
+                    String changedPin = scan.nextLine();
+                    changePin(oldPin, changedPin);
+	System.out.println("<=======================================================>");
                     break;
-
+	
                 case "0":
                     System.out.println("Goodbye! Thanks for using our services.");
-                    caleb.close();
+	System.out.println("<=======================================================>");
                     return;
 
                 default:

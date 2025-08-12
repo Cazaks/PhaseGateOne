@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class MenstrualCycle{
 	private String name;
 
-   	public MenstrualCycle(String name) {
+   	public void menstrualCycleApp(String name) {
         this.name = "";
     }
 
@@ -25,22 +25,22 @@ public class MenstrualCycle{
 
 	public void fertileWindow(int fertilWindowperiod, int ovulation){
 		fertilWindowperiod = 2 + ovulation + 2;
-		System.out.println("Your fertile window period is " + fertileWindowPeriod);
+		System.out.println("Your fertile window period is " + fertilWindowperiod);
 	}
 	
-	public void fullLengthFertileWindow(int fertilWindowperiod, int ovulation){
-		fertilWindowperiod = 5 + 2 + ovulation + 2;
-		System.out.println("Your full length fertile window period is " + fullLengthFertileWindow);	
+	public void fullLengthFertileWindow(int fullFertilWindowperiod, int ovulation){
+		fullFertilWindowperiod = 5 + 2 + ovulation + 2;
+		System.out.println("Your full length fertile window period is " + fullFertilWindowperiod);	
 	}
 
 	public void saveDays(int fullLengthFertileWindow, int ovulation){
-		saveDays = 5 + 2 + ovulation + 2;
-		System.out.println("Your save days are " + saveDays);	
+		int safeDays = 5 + 2 + ovulation + 2;
+		System.out.println("Your save days are " + safeDays);	
 	}
 
 	public static void main(String[] args) {
         Scanner caleb = new Scanner(System.in);
-        MenstrualCycle check = new MenstrualCycle("Glory");
+        //MenstrualCycle status = new MenstrualCycle("Glory");
 
 	while (true) {
 	    //System.out.println("\nWelcome to Medizz Menstrual cycle applicatio. We are glad you choose us");
@@ -61,39 +61,39 @@ public class MenstrualCycle{
                 case "1":
                     System.out.println("Enter name: ");
                     String name = caleb.nextLine();
-                    check.createAccount(name);
+                    createAccount(name);
                     break;
 
                 case "2":
                     System.out.println("Enter your current period date:");
 		    int currentPeriod = caleb.nextInt();
 		    System.out.println("Enter your last period date:");
-                    int lastPeriod = caleb.nextDouble();
-                    check.cycleLengthDays(currentPeriodDate, lastPeriodDate);
+                    int lastPeriod = caleb.nextInt();
+                    cycleLengthDays(currentPeriod, lastPeriod);
                     break;
 
                 case "3":
                     System.out.println("Enter your cycle length days:");
-                    int ovulation = caleb.nextDouble();
-                    check.ovulationDay(ovulation);
+                    int ovulation = caleb.nextInt();
+                    ovulationDay(ovulation);
                     break;
 
                 case "4":
                     System.out.println("Enter your ovaluation days: ");
-                    fertilWnd = caleb.nextDouble();
-                    check.fertileWindow(fertilWnd);
+                    int fertilWnd = caleb.nextInt();
+                    fertileWindow(fertilWnd);
                     break;
 
                 case "5":
                     System.out.println("Enter your fertile window period: ");
-                    fullFeertilWind = caleb.nextLine();
-                    account.fullLengthFertileWindow(fullFeertilWind);
+                   int fullFertilWind = caleb.nextInt();
+                    fullLengthFertileWindow(fullFertilWind);
                     break;
 
-		case "5":
+		case "6":
                     System.out.println("Enter your full fertile window period: ");
-                    safed = caleb.nextLine();
-                    account.saveDays(safed);
+                    int safed = caleb.nextInt();
+                    safeDays(safed);
                     break;
 
                 case "0":

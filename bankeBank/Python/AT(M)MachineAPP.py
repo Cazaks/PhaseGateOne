@@ -37,7 +37,7 @@ class ATM_MachineAPP:
 			print("you cannot transfer a negative value")
 
 	def check_balance(self):
-		print(f" Your bank balance is: {slfe.balance}")
+		print(f" Your bank balance is: {self.balance}")
 
 	def change_pin(self, old_pin, new_pin, ):
 		if self.pin == old_pin:
@@ -49,6 +49,7 @@ class ATM_MachineAPP:
 def main():
 	account = ATM_MachineAPP("Caleb", 20000, 1443)
 	while True:
+		print("\nWelcome to Cazak Global Financial Institude; aka 'money na water' (CGFI)");
 		print("We offer the following services")
 		print("Press;")
 		print("1. Create account")
